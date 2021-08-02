@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<ol class="list-group list-group-numbered">
+       {% for category in categories %}
+
+      <li class="list-group-item"><a href="{% url 'list' category.slug %}">{{ category.name }}</a></li>
+
+       {% endfor %}
+   </ol>
+
+
+{% endblock %}
