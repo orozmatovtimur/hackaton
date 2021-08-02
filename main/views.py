@@ -1,5 +1,13 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+
+from main.models import *
 
 
-def index(request):
-    return render(request, 'index.html')
+class MainPageView(ListView):
+    model = Dish
+    template_name = 'index.html'
+    context_object_name = 'recipes'
+
+
+
