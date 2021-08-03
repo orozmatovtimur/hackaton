@@ -98,47 +98,47 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </section>
 
+{% block content %} {% endblock %}
 
- <!-- MENU-->
-<!--     <section id="menu" data-stellar-background-ratio="0.5">-->
-<!--          <div class="container">-->
-<!--               <div class="row">-->
+<!--  MENU-->
+     <section id="menu" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
 
-<!--                    <div class="col-md-12 col-sm-12">-->
-<!--                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">-->
-<!--                              {% for category in categories %}-->
-<!--                              <h2>{{ category.name }}</h2>-->
-<!--                              <h4>Tea Time &amp; Dining</h4>-->
-<!--                              {% endfor %}-->
-<!--                         </div>-->
-<!--                    </div>-->
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h1>hello</h1>
+                              {% for category in categories %}
+                              <h2>{{ category.name }}</h2>
+                              <h4>Tea Time &amp; Dining</h4>
+                              {% endfor %}
+                         </div>
+                    </div>
 
-<!--                    <div class="col-md-4 col-sm-6">-->
-<!--                         &lt;!&ndash; MENU THUMB &ndash;&gt;-->
-<!--                         <div class="menu-thumb">-->
-<!--                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">-->
-<!--                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">-->
-<!--                                   {% for category in categories %}-->
-<!--                                   <div class="menu-info">-->
-<!--                                        <div class="menu-item">-->
-<!--                                             <h1>HELLO</h1>-->
-<!--                                             <h3>{{ category.name }}</h3>-->
-<!--&lt;!&ndash;                                             <img src="{{ category.image.url }}" alt="">&ndash;&gt;-->
-<!--&lt;!&ndash;                                             <p>Tomato / Eggs / Sausage</p>&ndash;&gt;-->
-<!--                                        </div>-->
-<!--                                        <div class="menu-price">-->
-<!--                                             <span>$25</span>-->
-<!--                                        </div>-->
-<!--                                   </div>-->
-<!--                                   {% endfor %}-->
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
+                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">
+                                   {% for category in categories %}
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h1>HELLO</h1>
+                                             <h3>{{ category.name }}</h3>
+<!--                                             <img src="{{ category.image.url }}" alt="">-->
+<!--                                             <p>Tomato / Eggs / Sausage</p>-->
+                                        </div>
 
-<!--                              </a>-->
-<!--                         </div>-->
-<!--                    </div>-->
-<!--               </div>-->
-<!--          </div>-->
-<!--     </section>-->
-{% endblock %}
+                                   </div>
+                                   {% endfor %}
+
+                              </a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
 
  <!-- CONTACT -->
      <section id="contact" data-stellar-background-ratio="0.5">
