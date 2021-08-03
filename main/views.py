@@ -18,16 +18,13 @@ class DishCreateView(CreateView):
     form_class = CreateDishForm
     context_object_name = 'dish_form'
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['dish_form'] = self.get_form(self.get_form_class())
         return context
 
-
     def get_success_url(self):
         return reverse('home')
-
 
 
 class DishUpdateView(UpdateView):
