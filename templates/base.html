@@ -100,6 +100,10 @@ http://www.templatemo.com/tm-515-eatery
      {% block content %}
      {% endblock%}
 
+<!--{% for category in categories %}-->
+<!--     {{ category.name }}-->
+<!--     {% endfor %}-->
+
 
      <section id="menu" data-stellar-background-ratio="0.5">
           <div class="container">
@@ -109,7 +113,7 @@ http://www.templatemo.com/tm-515-eatery
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                               {% for category in categories %}
                               <h2>{{ category.name }}</h2>
-                              <h4>Tea Time &amp; Dining</h4>
+                              <img src="{{ category.image.url }}" alt="">
                               {% endfor %}
                          </div>
                     </div>
