@@ -27,6 +27,8 @@ http://www.templatemo.com/tm-515-eatery
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+<!--          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+
 
 </head>
 <body>
@@ -92,83 +94,51 @@ http://www.templatemo.com/tm-515-eatery
                                    </div>
                               </div>
                          </div>
-
-                         <div class="item item-second">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-8 col-sm-12">
-                                             <h3>Your Perfect Breakfast</h3>
-                                             <h1>The best dinning quality can be here too!</h1>
-                                             <a href="#menu" class="section-btn btn btn-default smoothScroll">Discover menu</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-
-                         <div class="item item-third">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-8 col-sm-12">
-                                             <h3>New Restaurant in Town</h3>
-                                             <h1>Enjoy our special menus every Sunday and Friday</h1>
-                                             <a href="#contact" class="section-btn btn btn-default smoothScroll">Reservation</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
                     </div>
-
           </div>
      </section>
 
 
-
-     <!--     &lt;!&ndash; TESTIMONIAL &ndash;&gt;-->
-<!--     <section id="testimonial" data-stellar-background-ratio="0.5">-->
-<!--          <div class="overlay"></div>-->
+ <!-- MENU-->
+<!--     <section id="menu" data-stellar-background-ratio="0.5">-->
 <!--          <div class="container">-->
 <!--               <div class="row">-->
 
 <!--                    <div class="col-md-12 col-sm-12">-->
 <!--                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">-->
-<!--                              <h2>Testimonials</h2>-->
-<!--                         </div>-->
-<!--                    </div>  -->
-
-<!--                    <div class="col-md-offset-2 col-md-8 col-sm-12">-->
-<!--                         <div class="owl-carousel owl-theme">-->
-<!--                              <div class="item">-->
-<!--                                   <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum ullamcorper nulla non.</p>-->
-<!--                                        <div class="tst-author">-->
-<!--                                             <h4>Digital Carlson</h4>-->
-<!--                                             <span>Pharetra quam sit amet</span>-->
-<!--                                        </div>-->
-<!--                              </div>-->
-
-<!--                              <div class="item">-->
-<!--                                   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed vestibulum orci quam.</p>-->
-<!--                                        <div class="tst-author">-->
-<!--                                             <h4>Johnny Stephen</h4>-->
-<!--                                             <span>Magna nisi porta ligula</span>-->
-<!--                                        </div>-->
-<!--                              </div>-->
-
-<!--                              <div class="item">-->
-<!--                                   <p>Vivamus aliquet felis eu diam ultricies congue. Morbi porta lorem nec consectetur porta quis dui elit habitant morbi.</p>-->
-<!--                                        <div class="tst-author">-->
-<!--                                             <h4>Jessie White</h4>-->
-<!--                                             <span>Vitae lacinia augue urna quis</span>-->
-<!--                                        </div>-->
-<!--                              </div>-->
-
+<!--                              {% for category in categories %}-->
+<!--                              <h2>{{ category.name }}</h2>-->
+<!--                              <h4>Tea Time &amp; Dining</h4>-->
+<!--                              {% endfor %}-->
 <!--                         </div>-->
 <!--                    </div>-->
 
+<!--                    <div class="col-md-4 col-sm-6">-->
+<!--                         &lt;!&ndash; MENU THUMB &ndash;&gt;-->
+<!--                         <div class="menu-thumb">-->
+<!--                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">-->
+<!--                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">-->
+<!--                                   {% for category in categories %}-->
+<!--                                   <div class="menu-info">-->
+<!--                                        <div class="menu-item">-->
+<!--                                             <h1>HELLO</h1>-->
+<!--                                             <h3>{{ category.name }}</h3>-->
+<!--&lt;!&ndash;                                             <img src="{{ category.image.url }}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                             <p>Tomato / Eggs / Sausage</p>&ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-price">-->
+<!--                                             <span>$25</span>-->
+<!--                                        </div>-->
+<!--                                   </div>-->
+<!--                                   {% endfor %}-->
+
+<!--                              </a>-->
+<!--                         </div>-->
+<!--                    </div>-->
 <!--               </div>-->
 <!--          </div>-->
-<!--     </section>  -->
-
-
+<!--     </section>-->
+{% endblock %}
 
  <!-- CONTACT -->
      <section id="contact" data-stellar-background-ratio="0.5">
@@ -307,6 +277,8 @@ http://www.templatemo.com/tm-515-eatery
      <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
      <script src="{% static 'js/smoothscroll.js' %}"></script>
      <script src="{% static 'js/custom.js' %}"></script>
+
+
 
 </body>
 </html>
