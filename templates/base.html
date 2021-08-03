@@ -77,7 +77,6 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </section>
 
-
      <!-- HOME -->
      <section id="home" class="slider" data-stellar-background-ratio="0.5">
           <div class="row">
@@ -98,6 +97,7 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </section>
 
+<<<<<<< HEAD
 {% block content %} {% endblock %}
 
 <!--  MENU-->
@@ -139,6 +139,50 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </section>
 
+=======
+     {% block content %}
+     {% endblock%}
+
+
+     <section id="menu" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              {% for category in categories %}
+                              <h2>{{ category.name }}</h2>
+                              <h4>Tea Time &amp; Dining</h4>
+                              {% endfor %}
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
+                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">
+                                   {% for category in categories %}
+                                   <div class="menu-info">
+                                        <div class="menu-item">
+                                             <h1>HELLO</h1>
+                                             <h3>{{ category.name }}</h3>
+                                             <img src="{{ category.image.url }}" alt="">
+                                             <p>Tomato / Eggs / Sausage</p>
+                                        </div>
+                                        <div class="menu-price">
+                                             <span>$25</span>
+                                        </div>
+                                   </div>
+                                   {% endfor %}
+
+                              </a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+>>>>>>> cd7b8426065a60eecbe984a2b9a1249d5a57bd22
 
  <!-- CONTACT -->
      <section id="contact" data-stellar-background-ratio="0.5">
@@ -161,39 +205,17 @@ http://www.templatemo.com/tm-515-eatery
                          <div class="col-md-12 col-sm-12">
                               <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                                    <h2>Contact Us</h2>
+                                   <h3>Number:</h3><h3 style="color: blue">+996779411789</h3>
+                                   <h3>Email:</h3><h3 style="color: blue">t.orozmatov77@gmail.com</h3>
+
                               </div>
                          </div>
-
-                         <!-- CONTACT FORM -->
-                         <form action="#" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
-
-                              <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
-                              <h6 class="text-success">Your message has been sent successfully.</h6>
-
-                              <!-- IF MAIL NOT SENT -->
-                              <h6 class="text-danger">E-mail must be valid and message must be longer than 1 character.</h6>
-
-                              <div class="col-md-6 col-sm-6">
-                                   <input type="text" class="form-control" id="cf-name" name="name" placeholder="Full name">
-                              </div>
-
-                              <div class="col-md-6 col-sm-6">
-                                   <input type="email" class="form-control" id="cf-email" name="email" placeholder="Email address">
-                              </div>
-
-                              <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
-
-                                   <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell about your project"></textarea>
-
-                                   <button type="submit" class="form-control" id="cf-submit" name="submit">Send Message</button>
-                              </div>
-                         </form>
                     </div>
 
                </div>
           </div>
      </section>
+
 
 
  <!-- FOOTER -->
@@ -262,10 +284,6 @@ http://www.templatemo.com/tm-515-eatery
                </div>
           </div>
      </footer>
-
-
-
-
 
 
  <!-- SCRIPTS -->
