@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path
 
 from main.views import *
@@ -11,6 +12,11 @@ urlpatterns = [
 # from django.contrib import admin
 # from django.urls import path, include
 #
+=======
+from django.contrib import admin
+from django.urls import path, include
+
+>>>>>>> timur
 # urlpatterns = [
 #     path('/', )
 ]

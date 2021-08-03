@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     # my apps
     'main',
     'cafe_shop',
-
     'account',
     'crispy_forms',
+
 
 ]
 
