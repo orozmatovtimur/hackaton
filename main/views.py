@@ -117,3 +117,5 @@ def cart_clear(request):
 @login_required()
 def cart_detail(request):
     return render(request, 'cart/cart_detail.html')
+
+
