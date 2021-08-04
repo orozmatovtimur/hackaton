@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> bakay
 from django.urls import path
 
 from .views import *
@@ -12,9 +8,7 @@ urlpatterns = [
     path('dish/update/<int:id>/', DishUpdateView.as_view(), name='update_dish'),
     path('dish/delete/<int:id>/', DishDeleteView.as_view(), name='delete_dish'),
 
-<<<<<<< HEAD
-]
-=======
+
     # cart urls
     path('cart/add/<int:id>/', cart_add, name='cart_add'),
     path('cart/item_clear/<int:id>/', item_clear, name='item_clear'),
@@ -26,16 +20,5 @@ urlpatterns = [
     path('cart/cart-detail/', cart_detail, name='cart_detail'),
     ]
 
-# from django.contrib import admin
-# from django.urls import path, include
-#
 
-# from django.contrib import admin
-# from django.urls import path, include
-
-
-# urlpatterns = [
-#     path('/', )
-
->>>>>>> bakay
 
