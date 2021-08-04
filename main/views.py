@@ -58,6 +58,7 @@ class DishDeleteView(IsAdminCheckMixin, DeleteView):
     def get_success_url(self):
         return reverse('home')
 
+
 #
 # class AddReview(View):
 #
@@ -69,7 +70,6 @@ class DishDeleteView(IsAdminCheckMixin, DeleteView):
 #             form.dish = dish
 #             form.save()
 #         return redirect(dish.get_absolute_url())
-
 
 @login_required()
 def cart_add(request, id):
@@ -113,3 +113,5 @@ def cart_clear(request):
 @login_required()
 def cart_detail(request):
     return render(request, 'cart/cart_detail.html')
+    return render(request, 'cart/cart_detail.html')
+
