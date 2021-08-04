@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
-     <title>Eatery Cafe and Restaurant Template</title>
+     <title>Eatery Cafe</title>
 <!--
 
 Eatery Cafe Template
@@ -55,21 +55,24 @@ http://www.templatemo.com/tm-515-eatery
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand">Eatery <span>.</span> Cafe</a>
+                    <a href="#" class="navbar-brand">Eatery <span>.</span> Cafe</a>
                </div>
 
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#" class="smoothScroll">Home</a></li>
-                         <li><a href="#about" class="smoothScroll">About</a></li>
+                         <li><a href="{% url 'home' %}" class="smoothScroll">Home</a></li>
+                         <li><a href="#" class="smoothScroll">About</a></li>
+
                          <li><a href="{% url 'create_dish' %}" class="smoothScroll">Create</a></li>
+
                          <li><a href="#" class="smoothScroll">Menu</a></li>
                          <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                         <li><a href="#" class="smoothScroll"> <img style="width: 30px ;height: auto;" src="{% static 'cart/carts.png' %}" > </a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
+                         <li><a href="#">Call Now! <i class="fa fa-phone"></i> 0705290702</a></li>
                          <a href="#footer" class="section-btn">Reserve a table</a>
                     </ul>
                </div>
@@ -87,7 +90,7 @@ http://www.templatemo.com/tm-515-eatery
                                    <div class="container">
                                         <div class="col-md-8 col-sm-12">
                                              <h3>Eatery Cafe &amp; Restaurant</h3>
-                                             <h1>Our mission is to provide an unforgettable experience</h1>
+                                             <h1>Добро пожаловать к нам в ресторанный комплекс <br> Eatery Cafe </h1>
                                              <a href="#team" class="section-btn btn btn-default smoothScroll">Meet our chef</a>
                                         </div>
                                    </div>
@@ -97,96 +100,75 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </section>
 
-<<<<<<< HEAD
+
 {% block content %} {% endblock %}
 
+
+
+ <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="about-info">
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+<!--                                   <h4>Read our story</h4>-->
+                                   <h2>О нас :</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>Мы подняли этот проект во время ХАХАТОНА</p>
+                                   <p>Больше нечего расказать )) <a href="https://plus.google.com/+templatemo" target="_parent"></a>. Чоон рахмат.</p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
+                              <p style="width:100; height: auto;">
+<!--                              <img src="{% static 'my_img/img1.jpg' %}" class="img-responsive" alt="" >-->
+                              </p>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+
 <!--  MENU-->
-     <section id="menu" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              <h1>hello</h1>
-                              {% for category in categories %}
-                              <h2>{{ category.name }}</h2>
-                              <h4>Tea Time &amp; Dining</h4>
-                              {% endfor %}
-                         </div>
-                    </div>
+     <section id="menu" data-stellar-background-ratio="0.5" >
+          <div class="container" >
+               <div class="row" >
 
                     <div class="col-md-4 col-sm-6">
                          <!-- MENU THUMB -->
                          <div class="menu-thumb">
-                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
-                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">
-                                   {% for category in categories %}
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h1>HELLO</h1>
-                                             <h3>{{ category.name }}</h3>
-<!--                                             <img src="{{ category.image.url }}" alt="">-->
-<!--                                             <p>Tomato / Eggs / Sausage</p>-->
-                                        </div>
-
-                                   </div>
-                                   {% endfor %}
-
-                              </a>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
-
-=======
-     {% block content %}
-     {% endblock%}
-
-<!--{% for category in categories %}-->
-<!--     {{ category.name }}-->
-<!--     {% endfor %}-->
-
-
-     <section id="menu" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h2>Наше меню:</h2>
                               {% for category in categories %}
-                              <h2>{{ category.name }}</h2>
-                              <img src="{{ category.image.url }}" alt="">
-                              {% endfor %}
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
-                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">
-                                   {% for category in categories %}
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h1>HELLO</h1>
-                                             <h3>{{ category.name }}</h3>
-                                             <img src="{{ category.image.url }}" alt="">
-                                             <p>Tomato / Eggs / Sausage</p>
-                                        </div>
-                                        <div class="menu-price">
-                                             <span>$25</span>
-                                        </div>
-                                   </div>
-                                   {% endfor %}
-
+                              <a href="#" class="image-popup" >
+                                   <h3>{{ category.name }}</h3><br>
+                                   <img src="{{ category.image.url }}" class="img-responsive" alt="" style="width:300px;  margin: 0 auto;">
                               </a>
+                              {% endfor %}
+
                          </div>
                     </div>
+
                </div>
           </div>
      </section>
->>>>>>> cd7b8426065a60eecbe984a2b9a1249d5a57bd22
+
+
+
+
+
+
+
+
+
 
  <!-- CONTACT -->
      <section id="contact" data-stellar-background-ratio="0.5">
@@ -209,8 +191,8 @@ http://www.templatemo.com/tm-515-eatery
                          <div class="col-md-12 col-sm-12">
                               <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                                    <h2>Contact Us</h2>
-                                   <h3>Number:</h3><h3 style="color: blue">+996779411789</h3>
-                                   <h3>Email:</h3><h3 style="color: blue">t.orozmatov77@gmail.com</h3>
+                                   <h3>Number:</h3><h3 style="color: blue">+996705290702</h3>
+                                   <h3>Email:</h3><h3 style="color: blue">bakayn5@gmail.com</h3>
 
                               </div>
                          </div>
