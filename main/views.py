@@ -7,9 +7,9 @@ from main.models import *
 
 
 class MainPageView(ListView):
-    model = Dish
-    template_name = 'base.html'
-    context_object_name = 'dish'
+    model = Category
+    template_name = 'home.html'
+    context_object_name = 'categories'
 
 
 class DishCreateView(CreateView):
@@ -46,3 +46,15 @@ class DishDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('home')
+
+#
+# class AddReview(View):
+#
+#     def dish(self, request, pk):
+#         form = ReviewForm(request.POST)
+#         dish = Dish.objects.get(id=pk)
+#         if form.is_valid():
+#             form = form.save(commit=False)
+#             form.dish = dish
+#             form.save()
+#         return redirect(dish.get_absolute_url())
