@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import *
+from django.contrib.auth.decorators import login_required
+
 
 from main.forms import *
 from main.models import *
@@ -11,6 +13,8 @@ class MainPageView(ListView):
     template_name = 'home.html'
     context_object_name = 'categories'
 
+    def get_success_url(self):
+        return reverse('home')
 
 class DishCreateView(CreateView):
     model = Dish
@@ -27,6 +31,8 @@ class DishCreateView(CreateView):
         return reverse('home')
 
 
+
+
 class DishUpdateView(UpdateView):
     model = Dish
     template_name = 'update_dish.html'
@@ -38,6 +44,9 @@ class DishUpdateView(UpdateView):
         context['dish_form'] = self.get_form(self.get_form_class())
         return context
 
+    def get_success_url(self):
+        return reverse('home')
+
 
 class DishDeleteView(DeleteView):
     model = Dish
@@ -47,6 +56,7 @@ class DishDeleteView(DeleteView):
     def get_success_url(self):
         return reverse('home')
 
+<<<<<<< HEAD
 #
 # class AddReview(View):
 #
@@ -58,3 +68,65 @@ class DishDeleteView(DeleteView):
 #             form.dish = dish
 #             form.save()
 #         return redirect(dish.get_absolute_url())
+=======
+
+class AddReview(View):
+    model = Reviews
+    template_name = 'base.html'
+    context_object_name = 'reviews'
+
+
+
+    # def dish(self, request, pk):
+    #     form = ReviewForm(request.POST)
+    #     dish = Dish.objects.get(id=pk)
+    #     if form.is_valid():
+    #         form = form.save(commit=False)
+    #         form.dish = dish
+    #         form.save()
+    #     return redirect(dish.get_absolute_url())
+
+
+@login_required()
+def cart_add(request, id):
+    cart = Cart(request)
+    product = Dish.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("home")
+
+
+@login_required()
+def item_clear(request, id):
+    cart = Cart(request)
+    product = Dish.objects.get(id=id)
+    cart.remove(product)
+    return redirect("cart_detail")
+
+
+@login_required()
+def item_increment(request, id):
+    cart = Cart(request)
+    product = Dish.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("cart_detail")
+
+
+@login_required()
+def item_decrement(request, id):
+    cart = Cart(request)
+    product = Dish.objects.get(id=id)
+    cart.decrement(product=product)
+    return redirect("cart_detail")
+
+
+@login_required()
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect("cart_detail")
+
+
+@login_required()
+def cart_detail(request):
+    return render(request, 'cart/cart_detail.html')
+>>>>>>> bakay

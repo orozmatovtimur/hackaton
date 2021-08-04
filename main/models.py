@@ -29,18 +29,18 @@ class Dish(models.Model):
         return self.title
 
 
-# class Reviews(models.Model):
-#     """Отзыв"""
-#     email = models.EmailField()
-#     name = models.CharField(max_length=100)
-#     text = models.CharField(max_length=3000)
-#     dish = models.ForeignKey(Dish, verbose_name='Блюдо ', on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return f"{self.name} - {self.dish}"
-#
-#     class Meta:
-#         verbose_name = "Отзыв"
-#         verbose_name_plural = "Отзывы"
+class Reviews(models.Model):
+    """Отзыв"""
+    email = models.EmailField()
+    name = models.CharField(max_length=100)
+    text = models.CharField(max_length=3000)
+    dish = models.ForeignKey(Dish, verbose_name='Блюдо ', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.name} - {self.dish}"
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
 
 
