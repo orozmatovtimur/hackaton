@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import *
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 from main.forms import *
@@ -10,7 +11,7 @@ from main.models import *
 
 class MainPageView(ListView):
     model = Category
-    template_name = 'base.html'
+    template_name = 'home.html'
     context_object_name = 'categories'
 
 
@@ -38,7 +39,12 @@ class DishDetailView(DetailView):
     pk_url_kwarg = 'id'
 
 
-class DishCreateView(CreateView):
+class IsAdminCheckMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_authenticated and self.request.user.is_superuser
+
+
+class DishCreateView(IsAdminCheckMixin,CreateView):
     model = Dish
     template_name = 'create_dish.html'
     form_class = CreateDishForm
@@ -53,7 +59,7 @@ class DishCreateView(CreateView):
         return reverse('home')
 
 
-class DishUpdateView(UpdateView):
+class DishUpdateView(IsAdminCheckMixin, UpdateView):
     model = Dish
     template_name = 'update_dish.html'
     form_class = UpdateDishForm
@@ -68,13 +74,14 @@ class DishUpdateView(UpdateView):
         return reverse('home')
 
 
-class DishDeleteView(DeleteView):
+class DishDeleteView(IsAdminCheckMixin, DeleteView):
     model = Dish
     template_name = 'delete_dish.html'
     pk_url_kwarg = 'id'
 
     def get_success_url(self):
         return reverse('home')
+
 
 
 # class AddReview(View):
@@ -93,6 +100,10 @@ class DishDeleteView(DeleteView):
 def cart_add(request, id):
     cart = Cart(request)
     product = Product.objects.get(id=id)
+@login_required()
+def cart_add(request, id):
+    cart = Cart(request)
+    product = Dish.objects.get(id=id)
     cart.add(product=product)
     return redirect("home")
 
@@ -101,6 +112,7 @@ def cart_add(request, id):
 def item_clear(request, id):
     cart = Cart(request)
     product = Product.objects.get(id=id)
+    product = Dish.objects.get(id=id)
     cart.remove(product)
     return redirect("cart_detail")
 
@@ -109,6 +121,7 @@ def item_clear(request, id):
 def item_increment(request, id):
     cart = Cart(request)
     product = Product.objects.get(id=id)
+    product = Dish.objects.get(id=id)
     cart.add(product=product)
     return redirect("cart_detail")
 
@@ -117,6 +130,7 @@ def item_increment(request, id):
 def item_decrement(request, id):
     cart = Cart(request)
     product = Product.objects.get(id=id)
+    product = Dish.objects.get(id=id)
     cart.decrement(product=product)
     return redirect("cart_detail")
 
@@ -131,3 +145,9 @@ def cart_clear(request):
 @login_required()
 def cart_detail(request):
     return render(request, 'cart/cart_detail.html')
+
+@login_required()
+def cart_detail(request):
+    return render(request, 'cart/cart_detail.html')
+    return render(request, 'cart/cart_detail.html')
+

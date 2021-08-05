@@ -1,6 +1,6 @@
 from django.urls import path
 
-from main.views import *
+from .views import *
 
 urlpatterns = [
     path('home/', MainPageView.as_view(), name='home'),
@@ -20,4 +20,8 @@ urlpatterns = [
     path('cart/cart_clear/', cart_clear, name='cart_clear'),
     path('cart/cart-detail/', cart_detail, name='cart_detail'),
 ]
+
+
+
+
 

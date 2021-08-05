@@ -1,84 +1,78 @@
-{% extends 'base.html' %}
+<!--{% extends 'base.html' %}-->
 
-{% block content %}
+<!--{% block content %}-->
 
-     <!-- ABOUT -->
-     <section id="about" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
+<!--     &lt;!&ndash; ABOUT &ndash;&gt;-->
+<!--     <section id="about" data-stellar-background-ratio="0.5">-->
+<!--          <div class="container">-->
+<!--               <div class="row">-->
 
-                    <div class="col-md-6 col-sm-12">
-                         <div class="about-info">
-                              <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
-                                   <h4>Read our story</h4>
-                                   <h2>We've been Making The Delicious Foods Since 1999</h2>
-                              </div>
+<!--                    <div class="col-md-6 col-sm-12">-->
+<!--                         <div class="about-info">-->
+<!--                              <div class="section-title wow fadeInUp" data-wow-delay="0.2s">-->
+<!--                                   <h4>Read our story</h4>-->
+<!--                                   <h2>We've been Making The Delicious Foods Since 1999</h2>-->
+<!--                              </div>-->
 
-                              <div class="wow fadeInUp" data-wow-delay="0.4s">
-                                   <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>
-                                   <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>
-                              </div>
-                         </div>
-                    </div>
+<!--                              <div class="wow fadeInUp" data-wow-delay="0.4s">-->
+<!--                                   <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>-->
+<!--                                   <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>-->
+<!--                              </div>-->
+<!--                         </div>-->
+<!--                    </div>-->
 
-                    <div class="col-md-6 col-sm-12">
-                         <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
-                              <img src="images/about-image.jpg" class="img-responsive" alt="">
-                         </div>
-                    </div>
-                    
-               </div>
-          </div>
-     </section>
+<!--                    <div class="col-md-6 col-sm-12">-->
+<!--                         <div class="wow fadeInUp about-image" data-wow-delay="0.6s">-->
+<!--                              <img src="images/about-image.jpg" class="img-responsive" alt="">-->
+<!--                         </div>-->
+<!--                    </div>-->
 
-
-     <!-- MENU-->
-     <section id="menu" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              {% for category in categories %}
-                              <h2>{{ category.name }}</h2>
-                              <h4>Tea Time &amp; Dining</h4>
-                              {% endfor %}
-                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                         <!-- MENU THUMB -->
-                         <div class="menu-thumb">
-                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">
-                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">
-                                   {% for category in categories %}
-                                   <div class="menu-info">
-                                        <div class="menu-item">
-                                             <h1>HELLO</h1>
-                                             <h3>{{ category.name }}</h3>
-<!--                                             <img src="{{ category.image.url }}" alt="">-->
-<!--                                             <p>Tomato / Eggs / Sausage</p>-->
-                                        </div>
-                                        <div class="menu-price">
-                                             <span>$25</span>
-                                        </div>
-                                   </div>
-                                   {% endfor %}
-                                   
-                              </a>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
+<!--               </div>-->
+<!--          </div>-->
+<!--     </section>-->
 
 
+<!--     &lt;!&ndash; MENU&ndash;&gt;-->
+<!--     <section id="menu" data-stellar-background-ratio="0.5">-->
+<!--          <div class="container">-->
+<!--               <div class="row">-->
+
+<!--                    <div class="col-md-12 col-sm-12">-->
+<!--                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">-->
+<!--                              {% for category in categories %}-->
+<!--                              <h2>{{ category.name }}</h2>-->
+<!--                              <h4>Tea Time &amp; Dining</h4>-->
+<!--                              {% endfor %}-->
+<!--                         </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-4 col-sm-6">-->
+<!--                         &lt;!&ndash; MENU THUMB &ndash;&gt;-->
+<!--                         <div class="menu-thumb">-->
+<!--                              <a href="images/menu-image1.jpg" class="image-popup" title="American Breakfast">-->
+<!--                                   <img src="{{ category.image.url }}" class="img-responsive" alt="">-->
+<!--                                   {% for category in categories %}-->
+<!--                                   <div class="menu-info">-->
+<!--                                        <div class="menu-item">-->
+<!--                                             <h1>HELLO</h1>-->
+<!--                                             <h3>{{ category.name }}</h3>-->
+<!--&lt;!&ndash;                                             <img src="{{ category.image.url }}" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                             <p>Tomato / Eggs / Sausage</p>&ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                        <div class="menu-price">-->
+<!--                                             <span>$25</span>-->
+<!--                                        </div>-->
+<!--                                   </div>-->
+<!--                                   {% endfor %}-->
+
+<!--                              </a>-->
+<!--                         </div>-->
+<!--                    </div>-->
+<!--               </div>-->
+<!--          </div>-->
+<!--     </section>-->
 
 
-
-
-
-
-{% endblock %}
+<!--{% endblock %}-->
 
 
 

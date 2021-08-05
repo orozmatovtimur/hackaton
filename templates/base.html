@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
-     <title>Eatery Cafe and Restaurant Template</title>
+     <title>Eatery Cafe</title>
 <!--
 
 Eatery Cafe Template
@@ -43,9 +43,9 @@ http://www.templatemo.com/tm-515-eatery
      </section>
 
 
-     <!-- MENU -->
+     <!-- NAVBAR -->
      <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
-          <div class="container">
+          <div style="margin-bottom: 50px" class="container">
 
                <div class="navbar-header">
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -55,27 +55,61 @@ http://www.templatemo.com/tm-515-eatery
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand">Eatery <span>.</span> Cafe</a>
+                    <a href="#" class="navbar-brand">Eatery <span>.</span> Cafe</a>
                </div>
 
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#" class="smoothScroll">Home</a></li>
+                         <li><a href="{% url 'home' %}" class="smoothScroll">Home</a></li>
                          <li><a href="#about" class="smoothScroll">About</a></li>
+                         <li><a href="#" class="smoothScroll">About</a></li>
+
                          <li><a href="{% url 'create_dish' %}" class="smoothScroll">Create</a></li>
+
                          <li><a href="#" class="smoothScroll">Menu</a></li>
                          <li><a href="{% url 'cart_detail' %}"><img style="width: 30px ;height: auto;" src="{% static 'cart/carts.png' %}" ></a></li>
+                         <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                         <li><a href="#" class="smoothScroll"> <img style="width: 30px ;height: auto;" src="{% static 'cart/carts.png' %}" > </a></li>
                     </ul>
+                     <!-- is Authenticated   -->
+                      {% if user.is_authenticated %}
+                        <div class="nav navbar-nav navbar-right">
+                        <li><a class="smoothScroll" href="/logout">Logout</a></li>
+                        <li><a class="smoothScroll" href="#">Welcome, {{user.username}}</a></li>
+                        </div>
 
-                    <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#">Call Now! <i class="fa fa-phone"></i> 010 020 0340</a></li>
-                         <a href="#footer" class="section-btn">Reserve a table</a>
-                    </ul>
+                      {% else %}
+                      <div class="nav navbar-nav navbar-right">
+                      <li><a class="smoothScroll" href="{% url 'register' %}">Sign Up</a></li>
+                      <li><a class="smoothScroll" href="{% url 'login' %}">Log In</a></li>
+                      </div>
+
+                      {% endif %}
+                      <!-- End is Authenticated  -->
                </div>
+<!--                         <li><a href="#" class="smoothScroll"> <img style="width: 30px ;height: auto;" src="{% static 'cart/carts.png' %}" > </a></li>-->
+                    </ul>
+                   </div>
+     <!-- is Authenticated   -->
+      {% if user.is_authenticated %}
+        <div class="nav navbar-nav navbar-right">
+        <li><a class="smoothScroll" href="/logout">Logout</a></li>
+        <li><a class="smoothScroll" href="#">Welcome, {{user.username}}</a></li>
+        </div>
 
-          </div>
+      {% else %}
+      <div class="nav navbar-nav navbar-right">
+      <li><a class="smoothScroll" href="{% url 'register' %}">Sign Up</a></li>
+      <li><a class="smoothScroll" href="{% url 'login' %}">Log In</a></li>
+      </div>
+
+      {% endif %}
+      <!-- End is Authenticated  -->
+            </div>
      </section>
+
+
 
      <!-- HOME -->
      <section id="home" class="slider" data-stellar-background-ratio="0.5">
@@ -87,7 +121,7 @@ http://www.templatemo.com/tm-515-eatery
                                    <div class="container">
                                         <div class="col-md-8 col-sm-12">
                                              <h3>Eatery Cafe &amp; Restaurant</h3>
-                                             <h1>Our mission is to provide an unforgettable experience</h1>
+                                             <h1>Добро пожаловать к нам в ресторанный комплекс <br> Eatery Cafe </h1>
                                              <a href="#team" class="section-btn btn btn-default smoothScroll">Meet our chef</a>
                                         </div>
                                    </div>
@@ -97,15 +131,19 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </section>
 
+
      {% block content %}
      {% endblock%}
 
 
 
 
-     <section id="menu" data-stellar-background-ratio="0.5">
+
+ <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5">
           <div class="container">
                <div class="row">
+
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
@@ -146,32 +184,25 @@ http://www.templatemo.com/tm-515-eatery
                </div>
           </div>
      </section>
+                    <div class="col-md-6 col-sm-12">
+                         <div class="about-info">
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+<!--                                   <h4>Read our story</h4>-->
+                                   <h2>О нас :</h2>
+                              </div>
 
- <!-- CONTACT -->
-     <section id="contact" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
-	<!-- How to change your own map point
-            1. Go to Google Maps
-            2. Click on your location point
-            3. Click "Share" and choose "Embed map" tab
-            4. Copy only URL and paste it within the src="" field below
-	-->
-                    <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
-                         <div id="google-map">
-                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" allowfullscreen></iframe>
+                              <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                   <p>Мы подняли этот проект во время ХАХАТОНА</p>
+                                   <p>Больше нечего расказать )) <a href="https://plus.google.com/+templatemo" target="_parent"></a>. Чоон рахмат.</p>
+                              </div>
                          </div>
                     </div>
 
                     <div class="col-md-6 col-sm-12">
-
-                         <div class="col-md-12 col-sm-12">
-                              <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                                   <h2>Contact Us</h2>
-                                   <h3>Number:</h3><h3 style="color: blue">+996779411789</h3>
-                                   <h3>Email:</h3><h3 style="color: blue">t.orozmatov77@gmail.com</h3>
-
-                              </div>
+                         <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
+                              <p style="width:100; height: auto;">
+<!--                              <img src="{% static 'my_img/img1.jpg' %}" class="img-responsive" alt="" >-->
+                              </p>
                          </div>
                     </div>
 
@@ -181,73 +212,28 @@ http://www.templatemo.com/tm-515-eatery
 
 
 
- <!-- FOOTER -->
-     <footer id="footer" data-stellar-background-ratio="0.5">
-          <div class="container">
-               <div class="row">
+<!--  MENU-->
+     <section id="menu" data-stellar-background-ratio="0.5" >
+          <div class="container" >
+               <div class="row" >
 
-                    <div class="col-md-3 col-sm-8">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Find us</h2>
-                              </div>
-                              <address class="wow fadeInUp" data-wow-delay="0.4s">
-                                   <p>123 nulla a cursus rhoncus,<br> augue sem viverra 10870<br>id ultricies sapien</p>
-                              </address>
-                         </div>
-                    </div>
+                    <div class="col-md-4 col-sm-6">
+                         <!-- MENU THUMB -->
+                         <div class="menu-thumb">
+                              <h2>Наше меню:</h2>
+                              {% for category in categories %}
+                              <a href="#" class="image-popup" >
+                                   <h3>{{ category.name }}</h3><br>
+                                   <img src="{{ category.image.url }}" class="img-responsive" alt="" style="width:300px;  margin: 0 auto;">
+                              </a>
+                              {% endfor %}
 
-                    <div class="col-md-3 col-sm-8">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Reservation</h2>
-                              </div>
-                              <address class="wow fadeInUp" data-wow-delay="0.4s">
-                                   <p>090-080-0650 | 090-070-0430</p>
-                                   <p><a href="mailto:info@company.com">info@company.com</a></p>
-                                   <p>LINE: eatery247 </p>
-                              </address>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-8">
-                         <div class="footer-info footer-open-hour">
-                              <div class="section-title">
-                                   <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>
-                              </div>
-                              <div class="wow fadeInUp" data-wow-delay="0.4s">
-                                   <p>Monday: Closed</p>
-                                   <div>
-                                        <strong>Tuesday to Friday</strong>
-                                        <p>7:00 AM - 9:00 PM</p>
-                                   </div>
-                                   <div>
-                                        <strong>Saturday - Sunday</strong>
-                                        <p>11:00 AM - 10:00 PM</p>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-2 col-sm-4">
-                         <ul class="wow fadeInUp social-icon" data-wow-delay="0.4s">
-                              <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                              <li><a href="#" class="fa fa-twitter"></a></li>
-                              <li><a href="#" class="fa fa-instagram"></a></li>
-                              <li><a href="#" class="fa fa-google"></a></li>
-                         </ul>
-
-                         <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s">
-                              <p><br>Copyright &copy; 2018 <br>Your Company Name
-
-                              <br><br>Design: <a rel="nofollow" href="http://templatemo.com" target="_parent">TemplateMo</a></p>
                          </div>
                     </div>
 
                </div>
           </div>
-     </footer>
-
+     </section>
 
  <!-- SCRIPTS -->
      <script src="{% static 'js/jquery.js' %}"></script>
@@ -258,8 +244,6 @@ http://www.templatemo.com/tm-515-eatery
      <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
      <script src="{% static 'js/smoothscroll.js' %}"></script>
      <script src="{% static 'js/custom.js' %}"></script>
-
-
 
 </body>
 </html>
