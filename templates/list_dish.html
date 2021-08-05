@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% block content %}
+
+<div align="center"><br><br>
+    {% for dish in dishes %}
+
+    <img src="{{ dish.image.url }}" alt="" style="width: 300px; height: auto;">
+    <a href="{{ detail.url }}"><h3>{{ dish.title }}</h3></a>
+    <h5>{{ dish.description|truncatechars:30 }}</h5>
+    <p>{{ dish.price }} сом</p>
+    <a  href="#"><button>Add to cart</button> </a>
+    <br><br>
+    <hr>
+
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

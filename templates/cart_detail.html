@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+{% load static %}
+{% content block %}
+
+    <h1>Cart list: </h1>
+    {% for key,dish in request.session.cart.items %}\
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ dish.price }}</li>
+        <li class="list-group-item">{{ dish.quantity }}</li>
+        <li class="list-group-item">{{ dish.price|multiply:product.quantity }}</li>
+    </ul>
+
+
+{% endblock %}
