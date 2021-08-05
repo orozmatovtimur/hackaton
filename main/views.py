@@ -30,6 +30,7 @@ class DishListView(ListView):
         context['category'] = self.kwargs.get('slug')
         return context
 
+
 class DishDetailView(DetailView):
     model = Dish
     template_name = 'detail_dish.html'

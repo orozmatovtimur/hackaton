@@ -100,9 +100,7 @@ http://www.templatemo.com/tm-515-eatery
      {% block content %}
      {% endblock%}
 
-<!--{% for category in categories %}-->
-<!--     {{ category.name }}-->
-<!--     {% endfor %}-->
+
 
 
      <section id="menu" data-stellar-background-ratio="0.5">
@@ -114,7 +112,7 @@ http://www.templatemo.com/tm-515-eatery
                               <h1>Меню :</h1><br>
                               <hr>
                               {% for category in categories %}
-                              <a href="#"><br>
+                              <a href="{% url 'list' category.slug %}"><br>
                                    <h2>{{ category.name }}</h2>
                                    <img src="{{ category.image.url }}" alt="" style="width: 300px; height: auto;"><br>
                                    <br>
